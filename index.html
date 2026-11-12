@@ -9,9 +9,24 @@
     }
 
 
-    <body{
+    body{
         border:10px solid red; 
         min-height: 100vh;
+        background: black;
+        color: white;
+        display: grid;
+        place-items: center
+    }
+
+    section{
+        background: rgba(255, 255 .2);
+        padding: 20%;
+        border-radius: 5%;
+        text-align: center;
+    }
+
+    p {
+        font-size: 100px;
     }
 </style>
     </head>
@@ -20,9 +35,34 @@
 
 ,<h1>contador engraxado</h1>
 <p>0</p>
-<button>mais</button>
-<button>menos</button>
+<button onclick="aumentar()">mais</button>
+<button onclick="diminuir()">menos</button>
         </section>
+<script>
 
+    // estado da minha aplicaçao 
+    let numero = 0
+    
+    // alteradores de estado de aplicaçao
+    function aumentar() {
+        numero = numero +1
+        mostrarNaTela()
+    }
+    function diminuir () {
+        numero = numero -1
+        mostrarNaTela()
+        
+    }
+
+    // jogar o estado de aplicaçao na tela 
+    function mostrarNaTela(){
+        const p = document.querySelector("p")
+        p.innerText = numero 
+    }
+
+    // iniciar
+    mostrarNaTela()
+    
+</script>
     </body>
 </html>
